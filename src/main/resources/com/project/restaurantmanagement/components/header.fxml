@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<VBox alignment="CENTER" spacing="10"
+      xmlns:fx="http://javafx.com/fxml"
+      style="-fx-background-color: #f4f4f4; -fx-background-radius: 0 0 10px 10px;">
+
+    <StackPane styleClass="bg-danger" style="-fx-background-radius: 0 0 10px 10px;">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <Label styleClass="h1, b, text-danger"
+               text="King Burrito Restaurant"/>
+    </StackPane>
+</VBox>

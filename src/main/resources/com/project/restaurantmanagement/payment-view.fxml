@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<FlowPane orientation="VERTICAL"
+          alignment="TOP_CENTER"
+          hgap="10"
+          vgap="10"
+          xmlns:fx="http://javafx.com/fxml"
+          style="-fx-background-color: white;"
+          fx:controller="com.project.restaurantmanagement.controllers.PaymentController">
+
+    <fx:include source="components/auth-header.fxml"/>
+
+    <VBox alignment="CENTER_LEFT" spacing="20">
+        <padding>
+            <Insets top="20"/>
+        </padding>
+
+        <Label text="Please enter your payment details below:" styleClass="b"/>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="150"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+            </columnConstraints>
+
+            <Label text="Card Number:" styleClass="b" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="cardNumber" promptText="Enter your card number" GridPane.rowIndex="0"
+                       GridPane.columnIndex="1"/>
+
+            <Label text="Expiry Date:" styleClass="b" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="expiryDate" promptText="MM/YY" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="CVV:" styleClass="b" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="cvv" promptText="Enter your CVV" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Order Placed At:" styleClass="b" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="placedAt" promptText="Enter Order Placed Time (HH:MM)" GridPane.rowIndex="3"
+                       GridPane.columnIndex="1"/>
+
+            <Label fx:id="redeemCreditsLabel" visible="false" text="Redeem Credits:" styleClass="b"
+                   GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="redeemCreditsValue" visible="false" promptText="Credits Amount (Optional)"
+                       GridPane.rowIndex="4"
+                       GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label fx:id="errorLabel" styleClass="text-danger"/>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <HBox alignment="CENTER_LEFT" spacing="6">
+                <Label text="Preparation Time:" styleClass="b"/>
+                <Label fx:id="prepTime" styleClass="b"/>
+            </HBox>
+
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <HBox alignment="CENTER_RIGHT" spacing="6">
+                <Label text="Net Total:" styleClass="b"/>
+                <Label fx:id="total" styleClass="b"/>
+            </HBox>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <HBox alignment="CENTER_LEFT"
+                  spacing="10"
+                  style="-fx-padding: 4; -fx-border-width: 2; -fx-border-color: #ffcc00; -fx-border-radius: 5px;"
+                  onMousePressed="#onEditCartButtonClick">
+                <FontIcon iconLiteral="mdoal-add_shopping_cart"
+                          iconColor="#ffcc00"
+                          iconSize="28"/>
+
+                <Label text="Edit" styleClass="b"/>
+            </HBox>
+
+            <HBox alignment="CENTER_RIGHT"
+                  spacing="10"
+                  style="-fx-padding: 4; -fx-border-width: 2; -fx-border-color: #4caf50; -fx-border-radius: 5px;"
+                  onMousePressed="#onOrderButtonClick">
+                <FontIcon iconLiteral="mdomz-payments"
+                          iconColor="#4caf50"
+                          iconSize="28"/>
+
+                <Label text="Order" styleClass="b"/>
+            </HBox>
+        </HBox>
+    </VBox>
+</FlowPane>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<VBox alignment="CENTER" spacing="10"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.project.restaurantmanagement.controllers.AuthHeaderController"
+      style="-fx-background-color: #f4f4f4; -fx-background-radius: 0 0 10px 10px;">
+
+    <StackPane styleClass="bg-danger" style="-fx-background-radius: 0 0 10px 10px;">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <Label styleClass="h1, b, text-danger"
+               text="King Burrito Restaurant"/>
+    </StackPane>
+
+    <HBox spacing="10">
+        <padding>
+            <Insets top="2" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <HBox alignment="BASELINE_LEFT" spacing="2">
+            <Label text="User: " styleClass="b"/>
+            <Label fx:id="userLabel" style="-fx-font-size: 12px;"/>
+        </HBox>
+
+        <Pane HBox.hgrow="ALWAYS"/>
+
+        <HBox alignment="BASELINE_RIGHT" spacing="6">
+            <Label fx:id="creditsLabel" visible="false" styleClass="b, text-warning"/>
+
+            <Label text="·" styleClass="b" style="-fx-text-fill: grey;"/>
+
+            <Label styleClass="b" onMousePressed="#onCartClick">
+                <graphic>
+                    <FontIcon iconLiteral="mdoal-add_shopping_cart"
+                              iconSize="16"
+                              styleClass="h1, text-danger"/>
+                </graphic>
+                Cart
+            </Label>
+            <Label fx:id="cartSizeLabel" styleClass="b, text-success"/>
+
+            <Label text="·" styleClass="b" style="-fx-text-fill: grey;"/>
+
+            <Label styleClass="b" onMousePressed="#onProfileClick">
+                <graphic>
+                    <FontIcon iconLiteral="mdoal-account_circle" iconSize="16" styleClass="h1, text-danger"/>
+                </graphic>
+                Profile
+            </Label>
+
+            <Label text="·" styleClass="b" style="-fx-text-fill: grey;"/>
+
+            <Label styleClass="b" onMousePressed="#onLogoutClick">
+                <graphic>
+                    <FontIcon iconLiteral="mdoal-exit_to_app" iconSize="16" styleClass="h1, text-danger"/>
+                </graphic>
+                Logout
+            </Label>
+        </HBox>
+    </HBox>
+</VBox>

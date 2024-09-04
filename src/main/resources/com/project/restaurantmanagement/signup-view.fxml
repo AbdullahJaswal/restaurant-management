@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<FlowPane orientation="VERTICAL"
+          alignment="TOP_CENTER"
+          hgap="10"
+          vgap="10"
+          xmlns:fx="http://javafx.com/fxml"
+          style="-fx-background-color: white;"
+          fx:controller="com.project.restaurantmanagement.controllers.SignUpController">
+
+    <fx:include source="components/header.fxml"/>
+
+    <VBox alignment="CENTER" spacing="10">
+        <padding>
+            <Insets top="10"/>
+        </padding>
+
+        <TextField fx:id="firstNameField"
+                   styleClass="form-control"
+                   promptText="First Name"/>
+
+        <TextField fx:id="lastNameField"
+                   styleClass="form-control"
+                   promptText="Last Name"/>
+
+        <TextField fx:id="usernameField"
+                   styleClass="form-control"
+                   promptText="Username"/>
+
+        <PasswordField fx:id="passwordField"
+                       styleClass="form-control"
+                       promptText="Password"/>
+
+        <PasswordField fx:id="password2Field"
+                       styleClass="form-control"
+                       promptText="Confirm Password"/>
+
+        <StackPane>
+            <padding>
+                <Insets top="10"/>
+            </padding>
+
+            <Label fx:id="errorLabel"
+                   styleClass="b, text-danger"
+                   textAlignment="CENTER"
+                   visible="false"/>
+        </StackPane>
+
+        <StackPane>
+            <Button styleClass="btn, btn-lg, btn-warning"
+                    style="-fx-pref-width: 200px;"
+                    onAction="#onSignUpButtonClick">
+                <graphic>
+                    <GridPane hgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="50"/>
+                            <ColumnConstraints percentWidth="50"/>
+                        </columnConstraints>
+                        <FontIcon iconLiteral="mdoal-add_box" iconColor="white" iconSize="24" GridPane.columnIndex="0"/>
+                        <Label text="Sign Up" style="-fx-text-fill: white;" styleClass="b" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </graphic>
+            </Button>
+        </StackPane>
+
+        <StackPane>
+            <padding>
+                <Insets top="10"/>
+            </padding>
+
+            <Button styleClass="btn, btn-lg"
+                    style="-fx-pref-width: 200px; -fx-border-width: 2px; -fx-background-color: #f4f4f4; -fx-border-color: #f44336;"
+                    onAction="#onGoBackButtonClick">
+                <graphic>
+                    <GridPane hgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="50"/>
+                            <ColumnConstraints percentWidth="50"/>
+                        </columnConstraints>
+                        <FontIcon iconLiteral="mdoal-arrow_back_ios" iconColor="#f44336" iconSize="24"
+                                  GridPane.columnIndex="0"/>
+                        <Label text="Go Back" style="-fx-text-fill: #f44336;" styleClass="b" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </graphic>
+            </Button>
+        </StackPane>
+    </VBox>
+</FlowPane>

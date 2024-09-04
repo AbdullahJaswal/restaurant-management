@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<FlowPane orientation="VERTICAL"
+          alignment="TOP_CENTER"
+          hgap="10"
+          vgap="10"
+          xmlns:fx="http://javafx.com/fxml"
+          style="-fx-background-color: white;"
+          fx:controller="com.project.restaurantmanagement.controllers.OrderSuccessController">
+
+    <fx:include source="components/auth-header.fxml"/>
+
+    <VBox alignment="CENTER" spacing="20">
+        <padding>
+            <Insets top="50"/>
+        </padding>
+
+        <Label text="Order Placed Successfully" styleClass="b, text-success"/>
+
+        <HBox alignment="CENTER"
+              spacing="10"
+              style="-fx-padding: 4; -fx-border-width: 2; -fx-border-color: #2196f3; -fx-border-radius: 5px;"
+              onMousePressed="#onDashboardOptionClick">
+            <FontIcon iconLiteral="mdoal-dashboard"
+                      iconColor="#2196f3"
+                      iconSize="28"/>
+
+            <Label text="Dashboard" styleClass="b"/>
+        </HBox>
+    </VBox>
+</FlowPane>

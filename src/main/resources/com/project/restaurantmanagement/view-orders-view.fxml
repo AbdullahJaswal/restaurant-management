@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<FlowPane orientation="VERTICAL"
+          alignment="TOP_CENTER"
+          hgap="10"
+          vgap="10"
+          xmlns:fx="http://javafx.com/fxml"
+          style="-fx-background-color: white;"
+          fx:controller="com.project.restaurantmanagement.controllers.ViewOrdersController">
+
+    <fx:include source="components/auth-header.fxml"/>
+
+    <VBox alignment="CENTER_LEFT" spacing="20">
+        <padding>
+            <Insets top="20"/>
+        </padding>
+
+        <Label text="Order History:" styleClass="b"/>
+
+        <ScrollPane fitToWidth="true">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <GridPane fx:id="orderItems" hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="50"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="100"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="50"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="50"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="50"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="50"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="100"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="50"/>
+                </columnConstraints>
+
+                <Label text="Order ID" styleClass="b" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Label text="Items" styleClass="b" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Total" alignment="CENTER" styleClass="b" GridPane.rowIndex="0"
+                       GridPane.columnIndex="2"/>
+                <Label text="Amount Payed" alignment="CENTER" styleClass="b" GridPane.rowIndex="0"
+                       GridPane.columnIndex="3"/>
+                <Label text="Placed At" alignment="CENTER" styleClass="b" GridPane.rowIndex="0"
+                       GridPane.columnIndex="4"/>
+                <Label text="Ready At" alignment="CENTER" styleClass="b" GridPane.rowIndex="0"
+                       GridPane.columnIndex="5"/>
+                <Label text="Status" alignment="CENTER" styleClass="b" GridPane.rowIndex="0"
+                       GridPane.columnIndex="6"/>
+                <Label text="Action" alignment="CENTER_RIGHT" styleClass="b" GridPane.rowIndex="0"
+                       GridPane.columnIndex="7"/>
+            </GridPane>
+        </ScrollPane>
+
+        <HBox alignment="CENTER" spacing="10">
+            <HBox alignment="CENTER_LEFT"
+                  spacing="10"
+                  style="-fx-padding: 4; -fx-border-width: 2; -fx-border-color: #2196f3; -fx-border-radius: 5px;"
+                  onMousePressed="#onDashboardOptionClick">
+                <FontIcon iconLiteral="mdoal-dashboard"
+                          iconColor="#2196f3"
+                          iconSize="28"/>
+
+                <Label text="Dashboard" styleClass="b"/>
+            </HBox>
+
+            <HBox alignment="CENTER_RIGHT"
+                  spacing="10"
+                  style="-fx-padding: 4; -fx-border-width: 2; -fx-border-color: #4caf50; -fx-border-radius: 5px;"
+                  onMousePressed="#onDownloadOptionClick">
+                <FontIcon iconLiteral="mdomz-save"
+                          iconColor="#4caf50"
+                          iconSize="28"/>
+
+                <Label text="Export" styleClass="b"/>
+            </HBox>
+        </HBox>
+    </VBox>
+</FlowPane>
